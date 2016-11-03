@@ -1,26 +1,41 @@
 <ion-view>
-    <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
+    <!--ng-class="{'ng-hide':showIndex != 0}"-->
+    <ion-header-bar class="bar-stable" >
+        <h1 class="title">News App Sample</h1>
     </ion-header-bar>
-    <!--<ion-content>-->
+    <ion-content class="article" scroll="false">
+
+        <!--ng-class="{'has-header': animHeader}"-->
 
 
-    <swipe-cards swipetype="left-right">
-
-        <swipe-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-card-swipe="cardSwiped($index)">
+        <div ng-show="showIndex == $index" ng-class="{'upside':showIndex == $index && upside ,
+                    'downside':showIndex == $index && downside,
+                    'up-hide':showIndex - 1 == $index && upside ,
+                    'down-hide':showIndex + 1 == $index && downside ,
+        }" on-swipe-up="onSwipeUp($index)" on-swipe-down="onSwipeDown($index)"  class="card-body cardSize" ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-card-swipe="cardSwiped($index)">
             <div>
-                <div class="title">
+                <!--                <div class="title">
+                                    {{card.title}}
+                                </div>-->
+                <div class="image">
+                    <img class="imageSize" ng-src="{{card.image}}">
+                </div>
+                <div class="title textBody">
                     {{card.title}}
                 </div>
-                <div class="image">
-                    <img ng-src="{{card.image}}">
+                <div class="subtitle textBody">
+                    {{card.news}}
                 </div>
-                <div class="button-bar">
-                    <button class="button button-clear button-positive" ng-click="doAnything()">Like</button>
-                    <button class="button button-clear button-positive" ng-click="doAnything()">Disklike</button>
-                </div>
+                <!--                <div class="footer" ng-class="{'foot': animHeader}">
+                                    Read More...
+                                </div>-->
+                <!--                    <div class="button-bar">
+                                        <button class="button button-clear button-positive" ng-click="//doAnything()">Like</button>
+                                        <button class="button button-clear button-positive" ng-click="//doAnything()">Disklike</button>
+                                    </div>-->
             </div>
-        </swipe-card>
-    </swipe-cards>
-    <!--</ion-content>-->
+            <div style="clear:both"></div>
+        </div>
+
+    </ion-content>
 </ion-view>

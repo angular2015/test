@@ -1,7 +1,7 @@
 td-cards {
     display: block;
 }
- 
+
 td-card {
     position: absolute;
     left: 50%;
@@ -13,27 +13,27 @@ td-card {
     border-radius: 6px;
     background-color: rgb(255,255,255);
 }
- 
+
 .td-card .title {
     height: 40px;
     font-size: 15px;
     padding: 15px;
 }
- 
+
 td-card .image {
     position: absolute;
     top: 40px;
     width: 100%;
 }
- 
+
 td-card img {
     height: 258px;
     width: 100%;
     border-radius: 6px;
 }
- 
+
 /* Overlay styling*/
- 
+
 .overlayBox {
     position: absolute;
     left: 50%;
@@ -43,7 +43,7 @@ td-card img {
     opacity: 0;
     margin: 80px 0 0 -149px;
 }
- 
+
 .boxed {
     height: 50px;
     width: 100px;
@@ -51,31 +51,146 @@ td-card img {
     border-radius: 6px;
     font-size: 30px;
 }
- 
+
 .yes-text {
     background-color: rgba(0,256,0,0.2);
 }
- 
+
 .yesBox {
     margin: 10% 60% 0% 10%;
     border: 2px solid #00FF00;
     color: rgb(0, 256, 0);
     -webkit-transform: rotate(-25deg);
 }
- 
+
 .no-text {
     background-color: rgba(256,0,0,0.2);
 }
- 
+
 .noBox {
     margin: 10% 10% 0% 60%;
     border: 2px solid #FF0000;
     color: rgb(256, 0, 0);
     -webkit-transform: rotate(25deg);
 }
- 
+
 .fade {
-    -webkit-transition: 0.2s opacity linear;
-    transition: 0.2s opacity linear;
+    -webkit-transition: 0.2s opacity ease-in-out;
+    transition: 0.2s opacity ease-in-out;
     opacity: 0;
+}
+.article .scroll{
+    height: 100%;
+}
+.article-card{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.article-card .swipe-cards{
+    height: 100%;
+}
+.card-body{
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    /*background: #d2d2d2;*/
+}
+.upside{
+    animation-name: upside;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
+}
+@keyframes upside {
+    from {top:100%}
+    to {top:0px}
+}
+@-webkit-keyframes  upside {
+    from {top:100%}
+    to {top:0px}
+}
+
+.downside{
+    animation-name: downside;
+    animation-iteration-count: 1;
+    animation-timing-function:ease-in-out;
+    animation-duration: 0.5s;
+
+}
+@keyframes downside {
+    from {bottom:calc(100% - 44px);}
+    to {bottom:0px}
+}
+@-webkit-keyframes  downside {
+    from {bottom:calc(100% - 44px);}
+    to {top:0px}
+}
+
+.ng-hide.up-hide{
+    animation-name: uphide;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
+    /*opacity:1;*/
+}
+@keyframes uphide {
+    from {bottom:0}
+    to {bottom:calc(100% - 44px)}
+}
+@-webkit-keyframes  uphide {
+    from {bottom:0}
+    to {bottom:calc(100% - 44px)}
+}
+
+.ng-hide.down-hide{
+    animation-name: downhide;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
+    /*opacity:1;*/
+}
+@keyframes downhide {
+    from {top:44px}
+    to {top:100%}
+}
+@-webkit-keyframes  downhide {
+    from {top:44px}
+    to {top:100%}
+}
+.cardSize{
+    width: 100%;
+    /*    margin-left: 2%;
+        margin-right:2%;*/
+}
+.imageSize{
+    width:100%;
+}
+.textBody{
+    width:96%;
+    margin:0 auto;
+}
+.title{
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 6px;
+
+}
+.subtitle{
+
+}
+.footer{
+    position: absolute;
+    bottom: 0px;
+    background: black;
+    color: #A59999;
+    width: 100%;
+    padding: 10px 0 10px 2%;
+}
+.foot{
+    position: absolute;
+    /*bottom: 44px;*/
+   
 }
